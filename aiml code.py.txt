@@ -1,0 +1,47 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score
+import pickle
+
+# Load dataset
+# Simple dataset embedded directly
+messages = [
+    ("Free entry in a weekly prize draw!!", "spam"),
+    ("Congratulations! You've won a lottery.", "spam"),
+    ("Call now for a free offer", "spam"),
+    ("Are we meeting today?", "spam"),
+    ("Don't forget to bring the notes.", "spam"),
+    ("Let's have lunch tomorrow.", "spam"),
+]
+
+# Convert to DataFrame
+df = pd.DataFrame(messages, columns=["message", "label"])
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(df["message"], df["label"], test_size=0.3, random_state=42)
+
+# Vectorize
+vectorizer = CountVectorizer()
+X_train_vec = vectorizer.fit_transform(X_train)
+X_test_vec = vectorizer.transform(X_test)
+
+# Model
+model = MultinomialNB()
+model.fit(X_train_vec, y_train)
+
+# Predict
+y_pred = model.predict(X_test_vec)
+
+# Accuracy
+print("Accuracy:", accuracy_score(y_test, y_pred))
+
+# Save model
+pickle.dump(model, open("spam_model.pkl", "wb"))
+pickle.dump(vectorizer, open("vectorizer.pkl", "wb"))
+
+# Test prediction
+text = input("Enter a message: ")
+txt_vec = vectorizer.transform([text])
+print("Prediction:", model.predict(txt_vec)[0])
