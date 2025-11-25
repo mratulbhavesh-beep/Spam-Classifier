@@ -1,0 +1,24 @@
+Problem Statement – Spam Classifier using Machine Learning
+
+Email and message communication has become an essential part of daily life, especially in academic, professional, and business environments. However, the rapid increase in digital communication has also led to an overwhelming amount of unwanted messages—commonly known as spam. Spam messages often contain advertisements, fraudulent links, phishing attempts, and irrelevant content that distract users, waste time, and pose serious security risks. Identifying and filtering such messages manually is impractical and highly inefficient, especially when dealing with large volumes of data.
+
+To address this challenge, the goal of this project is to build an automated Spam Classifier using Machine Learning, capable of analyzing text messages and categorizing them as either spam or ham (non-spam). The classifier uses fundamental concepts of Artificial Intelligence and Machine Learning, such as data preprocessing, feature extraction, vectorization, and supervised learning algorithms. The system learns patterns from an existing dataset of labeled messages and applies those patterns to classify new, unseen text.
+
+The problem addressed in this project involves several key questions:
+
+How to convert unstructured text messages into numerical data that a machine learning algorithm can understand
+
+How to clean, normalize, and preprocess raw text to improve classification accuracy
+
+How to train a reliable machine learning model capable of distinguishing spam from legitimate messages
+
+How to evaluate the model’s performance using metrics such as accuracy, precision, recall, and confusion matrix
+
+How to build a simple and efficient system that can be used by students, researchers, or organizations to filter unwanted communication
+
+
+The system developed in this project uses standard ML techniques such as Bag-of-Words, TF-IDF vectorization, and algorithms like Naive Bayes or Logistic Regression, which are highly effective for text classification tasks. The workflow includes loading the dataset, preprocessing text, splitting data into training and testing sets, training the model, and evaluating its performance.
+
+This Spam Classifier provides a practical solution for filtering unwanted messages and reducing digital clutter. It demonstrates how machine learning can be applied to solve real-world problems efficiently while giving students hands-on exposure to important AI concepts such as natural language processing, data cleaning, and model evaluation.
+
+The project showcases the complete cycle of building an AI-powered text classification system—from understanding the problem and preparing the dataset to developing the model and testing its accuracy. It also highlights how even basic ML models can significantly improve digital communication management, making the overall process more secure, efficient, and user-friendly.
